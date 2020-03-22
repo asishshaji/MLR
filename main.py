@@ -55,7 +55,7 @@ def predictor(id):
         file_name = id_model_map['name']
         if(os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], file_name))):
             predicted_value = do_the_thing(id_model_map, req_data_json)
-            return jsonify(predictions=predicted_value)
+            return predicted_value
     else:
         return jsonify(error=f"{id} does'nt seem to exist in our database")
 
