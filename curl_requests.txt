@@ -1,0 +1,11 @@
+
+registering a model, returns your unique id
+curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "model.h5","input_fields":[{"name":"SepalLengthCm","dtype":"float64"},{"name":"SepalWidthCm","dtype":"float64"},{"name":"PetalLengthCm","dtype":"float64"},{"name":"PetalWidthCm","dtype":"float64"}],"model_size":"12MB"}' http://127.0.0.1:5000/
+
+
+
+send model as a file
+curl -i -F "file=@/home/asish/Desktop/logo.jpg"  http://127.0.0.1:5000/
+
+api request, returns json output from the model
+curl -i -X POST http://127.0.0.1:5000/{id}
