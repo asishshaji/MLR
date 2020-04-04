@@ -1,0 +1,14 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 871-170-429
+WARNING:tensorflow:From /home/asish/Desktop/sideProjects/MLR/server/venv/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4070: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/asish/Desktop/sideProjects/MLR/server/venv/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/asish/Desktop/sideProjects/MLR/server/venv/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 13917
+INFO:root:(128, 128)
+INFO:werkzeug:127.0.0.1 - - [04/Apr/2020 14:46:36] "[35m[1mPOST /a45b9e6e3fd833fba9cb1f85f7d9a6027deaedfb39aba11f80a4fdfb18cf9a54 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/asish/Desktop/sideProjects/MLR/server/utils/utils.py', reloading

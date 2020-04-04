@@ -10,35 +10,27 @@ from keras.preprocessing.image import ImageDataGenerator
 
 from sklearn.model_selection import train_test_split
 
-
 DATA_PATH = '/home/asish/Desktop/DATASET'
 
-
 broken_files = os.listdir(os.path.join(DATA_PATH, 'broken'))
-
 
 X = []
 y = []
 
-
 br_path = os.path.join(DATA_PATH, 'broken')
 for file in broken_files:
-    X.append(cv2.resize(cv2.imread(br_path+"/"+file), (128, 128)))
+    X.append(cv2.resize(cv2.imread(br_path + "/" + file), (128, 128)))
     y.append(0)
-
 
 unbroken_files = os.listdir(os.path.join(DATA_PATH, 'notbroken'))
 
-
 un_path = os.path.join(DATA_PATH, 'notbroken')
 for file in unbroken_files:
-    X.append(cv2.resize(cv2.imread(un_path+"/"+file), (128, 128)))
+    X.append(cv2.resize(cv2.imread(un_path + "/" + file), (128, 128)))
     y.append(1)
-
 
 X_train, X_val, Y_train, Y_val = train_test_split(
     X, y, test_size=0.2, random_state=1)
-
 
 model = Sequential()
 
@@ -67,7 +59,6 @@ model.compile(loss='binary_crossentropy',
 
 model.summary()
 
-
 train_datagen = ImageDataGenerator(
     rescale=1. / 255,
     shear_range=0.2,
@@ -80,10 +71,8 @@ val_datagen = ImageDataGenerator(
     zoom_range=0.2,
     horizontal_flip=True)
 
-
 train_generator = train_datagen.flow(np.array(X_train), Y_train, batch_size=16)
 validation_generator = val_datagen.flow(np.array(X_val), Y_val, batch_size=16)
-
 
 history = model.fit_generator(
     train_generator,
